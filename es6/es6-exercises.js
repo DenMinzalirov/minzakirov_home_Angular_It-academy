@@ -28,8 +28,9 @@ const [result1, result2, result3] = testResults;
 console.log(result1, result2, result3);
 // console.log(...testResults);
 
-// Exercise 6
-var scientist = {firstName: "Will", experience: 12};
-var firstName = scientist.firstName;
-var experience = scientist.experience;
+// Exercise 6 Object De-structuring
+const scientist = {firstName: "Will", experience: 12};
+const {firstName, experience} = scientist;
+// var firstName = scientist.firstName;
+// var experience = scientist.experience;
 console.log(firstName, experience);
