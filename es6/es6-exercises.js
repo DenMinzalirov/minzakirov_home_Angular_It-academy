@@ -1,11 +1,11 @@
 // Exercise 1 refactoring arrow function + const
-const double = (value) => { value * 2};
+const double = (value) => value * 2;
 console.log(double(10));
 
-// Exercise 2
-var greet = function (name) {
-    if (name === undefined) { name = "Alex"; }
-    console.log("Hello, " + name);
+// Exercise 2 refactoring arrow function + Template literals
+const greet = (name) => {
+    name === undefined ? name = "Alex" : name;
+    console.log(`Hello, ${name}`);
 };
 greet();
 greet("Anna");
