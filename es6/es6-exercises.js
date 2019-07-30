@@ -2,7 +2,7 @@
 const double = (value) => value * 2;
 console.log(double(10));
 
-// Exercise 2 refactoring arrow function + Template literals
+// Exercise 2 refactoring arrow function + template literals
 const greet = (name) => {
     name === undefined ? name = "Alex" : name;
     console.log(`Hello, ${name}`);
@@ -10,9 +10,9 @@ const greet = (name) => {
 greet();
 greet("Anna");
 
-// Exercise 3
-var numbers = [-3, 33, 38, 5];
-console.log(Math.min.apply(Math, numbers));
+// Exercise 3 refactoring spread operator
+const numbers = [-3, 33, 38, 5];
+console.log(Math.min(...numbers));
 
 // Exercise 4
 var newArray = [55, 20];
