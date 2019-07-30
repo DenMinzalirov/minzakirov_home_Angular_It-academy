@@ -19,12 +19,14 @@ const newArray = [55, 20];
 newArray.push(...numbers);
 console.log(newArray);
 
-// Exercise 5
-var testResults = [3.89, 2.99, 1.38];
-var result1 = testResults[0];
-var result2 = testResults[1];
-var result3 = testResults[2];
+// Exercise 5 refactoring Array De-structuring
+const testResults = [3.89, 2.99, 1.38];
+const [result1, result2, result3] = testResults;
+// var result1 = testResults[0];
+// var result2 = testResults[1];
+// var result3 = testResults[2];
 console.log(result1, result2, result3);
+// console.log(...testResults);
 
 // Exercise 6
 var scientist = {firstName: "Will", experience: 12};
