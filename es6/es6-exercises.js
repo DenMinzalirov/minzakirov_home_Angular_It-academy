@@ -14,9 +14,9 @@ greet("Anna");
 const numbers = [-3, 33, 38, 5];
 console.log(Math.min(...numbers));
 
-// Exercise 4
-var newArray = [55, 20];
-Array.prototype.push.apply(newArray, numbers);
+// Exercise 4 refactoring spread operator
+const newArray = [55, 20];
+newArray.push(...numbers);
 console.log(newArray);
 
 // Exercise 5
