@@ -1,7 +1,5 @@
-// Exercise 1
-var double = function(value) {
-    return value * 2;
-};
+// Exercise 1 refactoring arrow function + const
+const double = (value) => { value * 2};
 console.log(double(10));
 
 // Exercise 2
