@@ -22,15 +22,10 @@ console.log(newArray);
 // Exercise 5 refactoring Array De-structuring
 const testResults = [3.89, 2.99, 1.38];
 const [result1, result2, result3] = testResults;
-// var result1 = testResults[0];
-// var result2 = testResults[1];
-// var result3 = testResults[2];
 console.log(result1, result2, result3);
 // console.log(...testResults);
 
 // Exercise 6 Object De-structuring
 const scientist = {firstName: "Will", experience: 12};
 const {firstName, experience} = scientist;
-// var firstName = scientist.firstName;
-// var experience = scientist.experience;
 console.log(firstName, experience);
