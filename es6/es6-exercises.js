@@ -1,3 +1,4 @@
+"use strict";
 // Exercise 1 refactoring arrow function + const
 const double = (value) => value * 2;
 console.log(double(10));
