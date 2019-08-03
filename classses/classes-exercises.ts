@@ -23,11 +23,7 @@ console.log(car.acceleration);
 
 // Exercise 2
 abstract class BaseObject {
-    protected width: number;
-    protected length: number;
-    protected constructor (width: number = 0, length: number = 0) {
-        this.width = width;
-        this.length = length;
+    protected constructor (protected width: number = 0, protected length: number = 0) {
     }
 };
 
