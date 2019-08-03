@@ -1,10 +1,13 @@
 // Please, create and add correct interface for the person
+interface PersonFirstName {
+    firstName: string;
+};
 
-function greet(person) {
+function greet(person: PersonFirstName) {
     console.log("Hello, " + person.firstName);
 }
 
-function changeName(person) {
+function changeName(person: PersonFirstName) {
     person.firstName = "Anna";
 }
 
@@ -20,7 +23,12 @@ changeName(person);
 greet(person);
 person.greet("Anything");
 
-class Person {
+interface ClassPerson {
+    firstName: string;
+    lastName: string;
+};
+
+class Person implements ClassPerson {
     firstName: string;
     lastName: string;
 
