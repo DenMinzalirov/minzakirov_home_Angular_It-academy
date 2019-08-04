@@ -23,8 +23,13 @@ changeName(person);
 greet(person);
 person.greet("Anything");
 
+interface PersonClass {
+    firstName: string;
+    lastName: string;
+    greet(lastName: string): void;
+};
 
-class Person implements PersonFirstName {
+class Person implements PersonClass {
     firstName: string;
     lastName: string;
 
