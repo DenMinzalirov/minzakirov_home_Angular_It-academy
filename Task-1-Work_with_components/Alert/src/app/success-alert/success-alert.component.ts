@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-success-alert',
-  templateUrl: './success-alert.component.html',
-  styleUrls: ['./success-alert.component.css']
+  template: '<p>success operation!!!</p>',
+  styles: ['p{background-color: blue;text-align: center;}']
 })
 export class SuccessAlertComponent implements OnInit {
 
