@@ -1,4 +1,6 @@
+<hr>
 <p>Task 2: data-binding-work works!</p>
 <label for="imp">Введите текст</label>
 <input type="text" class="form-control" id="imp" [(ngModel)]="username">
 <p>{{username}}</p>
+<button class="btn btn-primary" (click)="username = ''">Очистит поле</button>
