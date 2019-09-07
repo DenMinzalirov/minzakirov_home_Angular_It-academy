@@ -1,1 +1,16 @@
-<p>show-details works!</p>
+<hr>
+<p>Task-3: show-details works!</p>
+
+<button class="btn btn-primary" (click)="togDetails()">Показать дтали</button>
+<p *ngIf="showDetails">
+  Секретное поле
+</p>
+<ul>
+  <li
+    *ngFor="let logItem of log"
+    [ngStyle]="{backgroundColor: logItem >= 5 ?'blue' : ''}"
+    [ngClass]="{whiteText:logItem >= 5}"
+  >
+    {{logItem}}
+  </li>
+</ul>

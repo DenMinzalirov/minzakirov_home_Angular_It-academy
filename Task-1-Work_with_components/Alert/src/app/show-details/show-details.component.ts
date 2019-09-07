@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show-details.component.css']
 })
 export class ShowDetailsComponent implements OnInit {
+  showDetails = false;
+  log = [];
+
+  togDetails() {
+    this.showDetails = !this.showDetails;
+    this.log.push(this.log.length + 1)
+  }
 
   constructor() { }
 
