@@ -8,7 +8,7 @@ import {Component, Input, OnInit, OnChanges, SimpleChanges} from '@angular/core'
 export class OddComponent implements OnInit, OnChanges {
 
   @Input() counter;
-  tempCounter = [];
+  tempCounterOdd = [];
 
   constructor() { }
 
@@ -16,10 +16,8 @@ export class OddComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.counter);
-    this.tempCounter.push(this.counter);
-    console.log('tempCounter' ,this.tempCounter);
+    if (this.counter % 2 !== 0 && this.counter !== 0) {
+      this.tempCounterOdd.push(this.counter);
+    }
   }
-
-
 }
