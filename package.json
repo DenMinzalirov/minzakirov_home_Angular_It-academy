@@ -1,0 +1,22 @@
+{
+  "name": "minzakirov_home_angular_it-academy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenMinzalirov/minzakirov_home_Angular_It-academy.git"
+  },
+  "author": "Minzakirov Denis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DenMinzalirov/minzakirov_home_Angular_It-academy/issues"
+  },
+  "homepage": "https://github.com/DenMinzalirov/minzakirov_home_Angular_It-academy#readme",
+  "dependencies": {
+    "typescript": "^3.5.3"
+  }
+}
