@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class UsersServiceService {
 
-   user = [{
+  user = [{
     name: 'Den',
     isActive: false
   },
@@ -18,10 +18,22 @@ export class UsersServiceService {
       isActive: false
     }];
 
-  str;
+   activation(e) {
+     console.log(this.user);
+     for (const checkNam of this.user) {
+       if (checkNam.name === e.name) {
+         checkNam.isActive = true;
+       }
+     }
+   }
 
-  loge(str: string) {
-    console.log(this.str);
+    inActivation(e) {
+     console.log(this.user);
+     for (const checkNam of this.user) {
+      if (checkNam.name === e.name) {
+        checkNam.isActive = false;
+      }
+    }
   }
 
   constructor() { }

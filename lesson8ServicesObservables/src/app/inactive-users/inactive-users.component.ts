@@ -11,7 +11,7 @@ export class InactiveUsersComponent implements OnInit {
   constructor(private usersService: UsersServiceService) { }
 
   ngOnInit() {
-    this.usersService.loge('der');
+
   }
 
 }
