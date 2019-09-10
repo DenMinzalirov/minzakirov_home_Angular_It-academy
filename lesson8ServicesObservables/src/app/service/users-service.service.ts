@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import {CounterServiceService} from './counter-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersServiceService {
+
+  constructor(private counterService: CounterServiceService) { }
 
   user = [{
     name: 'Den',
@@ -18,23 +21,21 @@ export class UsersServiceService {
       isActive: false
     }];
 
-   activation(e) {
-     console.log(this.user);
-     for (const checkNam of this.user) {
-       if (checkNam.name === e.name) {
-         checkNam.isActive = true;
-       }
-     }
-   }
+  activation(e) {
+    this.counterService.counter();
+    for (const checkNam of this.user) {
+      if (checkNam.name === e.name) {
+        checkNam.isActive = true;
+      }
+    }
+  }
 
-    inActivation(e) {
-     console.log(this.user);
-     for (const checkNam of this.user) {
+  inActivation(e) {
+    this.counterService.counter();
+    for (const checkNam of this.user) {
       if (checkNam.name === e.name) {
         checkNam.isActive = false;
       }
     }
   }
-
-  constructor() { }
 }

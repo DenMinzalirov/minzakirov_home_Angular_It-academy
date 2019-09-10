@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {UsersServiceService} from '../service/users-service.service';
 
 @Component({
@@ -6,11 +6,6 @@ import {UsersServiceService} from '../service/users-service.service';
   templateUrl: './active-users.component.html',
   styleUrls: ['./active-users.component.css']
 })
-export class ActiveUsersComponent implements OnInit {
-
+export class ActiveUsersComponent{
   constructor(private usersService: UsersServiceService) { }
-
-  ngOnInit() {
-  }
-
 }
