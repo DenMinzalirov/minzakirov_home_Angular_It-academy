@@ -1,2 +1,34 @@
-<p>user-form works!</p>
-<button class="btn btn-primary">Test Button</button>
+<div class="container">
+  <div class="col-xs-8 col-xs-offset-2">
+    <form>
+      <div class="form-group">
+        <label>User Name</label>
+        <input type="text" class="form-control">
+        <button class="btn btn-primary">Предложить User Name</button>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Секретный вопрос</label>
+        <select class="form-control">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <textarea class="form-control">Введите ответ на секр вопрос</textarea>
+        <p>Ваш ответ</p>
+      </div>
+      <div class="form-group">Ваш пол :
+        <label>Жен
+          <input type="radio">
+        </label>
+        <label>Муж
+          <input type="radio">
+        </label>
+      </div>
+      <button class="btn btn-success" type="submit">Отправить</button>
+    </form>
+  </div>
+</div>
