@@ -1,6 +1,6 @@
 <div class="container">
   <div class="col-xs-8 col-xs-offset-2">
-    <form (ngSubmit)="submitForm(form)" #form="ngForm">
+    <form (ngSubmit)="submitForm()" #form="ngForm" novalidate >
       <div ngModelGroup="user" #user="ngModelGroup">
         <div class="form-group">
         <label>User Name</label>
@@ -11,9 +11,14 @@
           name="userName"
           required
           #userName="ngModel"
+          placeholder="Введите Имя"
         >
         <p *ngIf="userName.invalid && userName.touched">Ввдите имя</p>
-        <button class="btn btn-primary">Предложить User Name</button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="addRandUser()"
+        >Предложить User Name</button>
         </div>
         <div class="form-group" >
         <label>Email</label>
@@ -25,6 +30,7 @@
           required
           email
           #email="ngModel"
+          placeholder="Введите Email"
         >
         <p *ngIf="email.invalid && email.touched">Ввдите корректный email</p>
       </div>
@@ -34,27 +40,35 @@
         <label>Секретный вопрос</label>
         <select
           class="form-control"
-          ngModel
+          [ngModel]="1"
           name="secret"
         >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
+          <option value="1">Имя питомца ?</option>
+          <option value="2">Номер мобильного телефона ?</option>
+          <option value="3">Девичья фамилия матери ?</option>
         </select>
         <textarea
           class="form-control"
           ngModel
           name="questionAnswer"
-        >Введите ответ на секр вопрос</textarea>
-        <p>Ваш ответ</p>
+          required
+          #textarea='ngModel'
+          placeholder="Введите сюда ответ на секрктный вопрос"
+        >
+        </textarea>
+        <p *ngIf="textarea.invalid && textarea.touched">Вы не ввели ответ на секретный вопрос</p>
+        <p>Ваш ответ : {{textarea.value}}</p>
       </div>
-      <div class="form-group">Ваш пол :
+      <p *ngIf="!genderW.checked && !genderM.checked">Выберите пол :</p>
+      <div class="form-group">
         <label>Жен
           <input
             type="radio"
             ngModel
             name="gender"
             value="Woman"
+            required
+            #genderW
           >
         </label>
         <label>Муж
@@ -63,6 +77,7 @@
             ngModel
             name="gender"
             value="Man"
+            #genderM
           >
         </label>
       </div>
@@ -73,5 +88,5 @@
       >Отправить</button>
     </form>
   </div>
-  {{form.value | json}}
+  <pre>{{form.value | json}}</pre>
 </div>

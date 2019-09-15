@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 
 @Component({
@@ -7,9 +7,19 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent implements OnInit {
+  @ViewChild('form', {static: false}) form: NgForm;
 
-  submitForm(form: NgForm) {
-    console.log(form);
+  addRandUser() {
+    const randUser = 'RandomUser';
+    this.form.form.patchValue({
+      user: {
+        userName: randUser
+      }
+    });
+  }
+
+  submitForm() {
+    console.log(this.form);
   }
 
   constructor() { }
