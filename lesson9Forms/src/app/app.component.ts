@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   getUser(event) {
-    console.log('app-c',event);
+    console.log('app-component get object Form', event);
   }
 }

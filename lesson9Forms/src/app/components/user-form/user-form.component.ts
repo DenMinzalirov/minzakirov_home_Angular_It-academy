@@ -6,7 +6,6 @@ import {RandomUserName} from '../../services/random-user-name.services';
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent {
 
@@ -28,5 +27,6 @@ export class UserFormComponent {
 
   submitForm() {
     this.updateUser.emit(this.form.value);
+    this.form.reset();
   }
 }
