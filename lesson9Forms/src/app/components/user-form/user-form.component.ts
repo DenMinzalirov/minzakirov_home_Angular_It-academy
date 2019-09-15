@@ -1,5 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {UserData} from '../../models/user-data.interface';
 
 @Component({
   selector: 'app-user-form',
@@ -7,6 +8,9 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent implements OnInit {
+  @Output()
+  updateUser: EventEmitter<UserData> = new EventEmitter<UserData>();
+
   @ViewChild('form', {static: false}) form: NgForm;
 
   addRandUser() {
@@ -19,7 +23,8 @@ export class UserFormComponent implements OnInit {
   }
 
   submitForm() {
-    console.log(this.form);
+    this.updateUser.emit(this.form.value)
+    console.log(this.form.value);
   }
 
   constructor() { }
