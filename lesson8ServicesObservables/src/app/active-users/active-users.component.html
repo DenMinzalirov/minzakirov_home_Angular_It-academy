@@ -1,6 +1,0 @@
-<hr>
-<div *ngFor="let users of usersService.user">
-  <div *ngIf="users.isActive">
-    <button (click)="usersService.inActivation(users)"> Деактивировать</button>{{users.name}} - АКТИВНЫЙ
-  </div>
-</div>
