@@ -9,6 +9,8 @@ import {RandomUserName} from '../../services/random-user-name.services';
 })
 export class UserFormComponent {
 
+  randUser;
+
   constructor(private randomUserName: RandomUserName) { }
 
   @Output()
@@ -17,12 +19,20 @@ export class UserFormComponent {
   @ViewChild('form', {static: false}) form: NgForm;
 
   addRandUser() {
-    const randUser = this.randomUserName.generateName();
-    this.form.form.patchValue({
-      user: {
-        userName: randUser
-      }
-    });
+    const data = this.randomUserName.generateName();
+    console.log(data);
+    // let randUser;
+    // this.randomUserName.generateName().subscribe((res: Response) => {
+    //   let data = res[Math.floor(Math.random() * 7)];
+    //   this.randUser = data;
+    //   console.log(this.randUser) ;
+    // });
+    //
+    // this.form.form.patchValue({
+    //   user: {
+    //     userName: this.randUser
+    //   }
+    // });
   }
 
   submitForm() {
