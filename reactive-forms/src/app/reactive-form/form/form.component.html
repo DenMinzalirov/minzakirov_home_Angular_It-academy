@@ -1,0 +1,17 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <label>Project Name</label>
+  <input type="text" formControlName="projectName">
+  <label>Mail</label>
+  <input type="email" formControlName="email">
+  <label>Project Status Dropdown</label>
+  <input type="text" formControlName="status">
+
+  <button type="submit">
+
+<!--          [disabled]="form.invalid"-->
+
+  >Submit Button</button>
+
+</form>
+
+<pre>{{ form.value | json }}</pre>
