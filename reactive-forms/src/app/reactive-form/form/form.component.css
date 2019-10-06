@@ -1,3 +1,19 @@
 input{
   display: block;
 }
+label{
+  display: block;
+}
+option{
+  display: block;
+}
+button{
+  display: block;
+  margin: 1rem 1rem;
+}
+
+p{
+  color: white;
+  background: red;
+  display: block;
+}

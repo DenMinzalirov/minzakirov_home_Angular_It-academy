@@ -1,15 +1,30 @@
 <form [formGroup]="form" (ngSubmit)="submitForm()">
   <label>Project Name</label>
   <input type="text" formControlName="projectName">
+  <p
+    *ngIf="form.get('projectName').hasError('required') && form.get('projectName').touched"
+  >Имя не должно быть пустым</p>
+  <p
+    *ngIf="form.get('projectName').hasError('projectNameNoTest') && form.get('projectName').dirty"
+  >Имя не должно быть Test</p>
+  <p
+    *ngIf="form.get('projectName').hasError('asyncCheck') && form.get('projectName').dirty"
+  >Имя не должно быть Test c сервера запрос</p>
   <label>Mail</label>
   <input type="email" formControlName="email">
+  <p
+    *ngIf="form.get('email').hasError('required') && form.get('email').touched"
+  >Mail не должно быть пустым</p>
+  <p
+    *ngIf="form.get('email').hasError('email') && form.get('email').dirty"
+  >Mail некорректный</p>
   <label>Project Status Dropdown</label>
-  <input type="text" formControlName="status">
+  <select formControlName="status">
+    <option *ngFor="let item of options" [value]="item">{{item}}</option>
+  </select>
 
-  <button type="submit">
-
-<!--          [disabled]="form.invalid"-->
-
+  <button type="submit"
+          [disabled]="form.invalid"
   >Submit Button</button>
 
 </form>
