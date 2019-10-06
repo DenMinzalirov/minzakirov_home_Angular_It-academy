@@ -1,3 +1,6 @@
+<span>не разрешаю использовать "Test" и "Test2" как Project Name
+</span>
+
 <form [formGroup]="form" (ngSubmit)="submitForm()">
   <label>Project Name</label>
   <input type="text" formControlName="projectName">
@@ -9,7 +12,7 @@
   >Имя не должно быть Test</p>
   <p
     *ngIf="form.get('projectName').hasError('asyncCheck') && form.get('projectName').dirty"
-  >Имя не должно быть Test c сервера запрос</p>
+  >Имя не должно быть Test replace the other one</p>
   <label>Mail</label>
   <input type="email" formControlName="email">
   <p

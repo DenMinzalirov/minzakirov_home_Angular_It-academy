@@ -17,3 +17,8 @@ p{
   background: red;
   display: block;
 }
+
+span{
+  margin: 10px auto;
+  display: block;
+}

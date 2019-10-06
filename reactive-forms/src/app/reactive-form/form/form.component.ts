@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AbstractControl, FormBuilder, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, ValidatorFn, Validators} from '@angular/forms';
 import {of} from 'rxjs';
 import {delay, map} from 'rxjs/operators';
 
@@ -16,7 +16,7 @@ export class FormComponent{
     projectName: ['',
       [
         Validators.required,
-        // this.checkProjectName()
+        this.checkProjectName()
       ],
       [this.asyncCheck.bind(this)]
     ],
@@ -26,20 +26,21 @@ export class FormComponent{
 
   options: string[] = ['Stable', 'Critical', 'Finished'];
   test = 'Test';
+  test2 = 'Test2'
 
   private asyncCheck(control: AbstractControl) {
-    return of(this.test !== control.value).pipe(
+    return of(this.test2 !== control.value).pipe(
       delay(1000),
       map(response => response ? null : {asyncCheck: true})
     );
   }
 
-  // checkProjectName(): ValidatorFn {
-  //   return (control: AbstractControl): { [key: string]: boolean } | null => {
-  //     const valid = this.test !== control.value;
-  //     return valid ? null : { projectNameNoTest: true };
-  //   };
-  // }
+  checkProjectName(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: boolean } | null => {
+      const valid = this.test !== control.value;
+      return valid ? null : { projectNameNoTest: true };
+    };
+  }
 
   submitForm() {
     console.log('submit', this.form.value);
