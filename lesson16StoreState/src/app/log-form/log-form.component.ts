@@ -33,8 +33,8 @@ export class LogFormComponent implements OnInit {
       this.logForm.patchValue({
         date: date
       });
-      console.log('upd', this.logForm.value);
       this.logStateService.updateLog(this.logForm.value);
+
       this.logForm.reset({date: date});
       return
     }
@@ -49,8 +49,7 @@ export class LogFormComponent implements OnInit {
 
   ngOnInit() {
     this.checkP = true;
-    this.arrLog.subscribe(console.log)
-    // this.arrLog = this.logStateService.logArrOut;
+    // this.arrLog.subscribe(console.log)
   }
 
   deleteLog(id) {

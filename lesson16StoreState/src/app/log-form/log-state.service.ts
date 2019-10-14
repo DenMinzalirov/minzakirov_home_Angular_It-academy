@@ -37,6 +37,7 @@ export class LogStateService {
         item.date = val.date
       }
     });
+    localStorage.setItem('logs' ,JSON.stringify(this.logArr));
     this.logging.next(this.logArr)
   }
 }
