@@ -1,0 +1,26 @@
+form {
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  border: 1px solid #dce5f2;
+  box-shadow: 0 1px 4px rgba(53,60,72,0.1);
+  padding: 20px 30px;
+}
+
+.addLog {
+  display: block;
+  margin: 10px 0px;
+}
+
+.loglist {
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  border: 1px solid #dce5f2;
+  box-shadow: 0 1px 4px rgba(53,60,72,0.1);
+  padding: 20px 30px;
+}
+
+.log {
+  border: 1px solid #dce5f2;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,21 @@
+<form [formGroup]="logForm" (ngSubmit)="addLog()">
+  <label>
+    <input type="text" formControlName="text">
+  </label>
+  <button class="addLog" type="submit" [disabled]="logForm.invalid && !logForm.get('text').touched">Add Log</button>
+
+</form>
+
+<p *ngIf="logForm.invalid && checkP">There are no logs in the system</p>
+<div class="loglist">
+  <div *ngFor="let log of arrLog | async">
+    <div class="log" (click)="updateLog(log.id)">
+    <span (click)="updateLog(log.id)">
+      {{ log.text }}
+    </span><span>
+      {{log.date | date: 'medium'}}
+    </span>
+      <button (click)="deleteLog(log.id)">x</button>
+    </div>
+  </div>
+</div>
