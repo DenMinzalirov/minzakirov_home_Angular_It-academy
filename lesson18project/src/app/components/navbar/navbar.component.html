@@ -1,0 +1,15 @@
+<nav class="navbar navbar-dark bg-dark mb-3">
+  <div class="container">
+    <a routerLink="/" class="navbar-brand">Log system</a>
+    <li class="nav-item" *ngIf="isLoggedIn">
+      <a href="#" class="nav-link">{{loggedInUser}}</a>
+    </li>
+    <li class="nav-item" *ngIf="!isLoggedIn">
+      <a routerLink="/login" class="nav-link">Login</a>
+    </li>
+    <li class="nav-item" *ngIf="isLoggedIn">
+      <a href="#" (click)="onLogoutClick()" class="nav-link">LogOut</a>
+    </li>
+
+  </div>
+</nav>
