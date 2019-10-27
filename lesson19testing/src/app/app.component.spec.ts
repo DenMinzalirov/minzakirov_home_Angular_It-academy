@@ -17,14 +17,11 @@ describe('App: CompleteGuideFinalWebpack', () => {
       ],
     });
     fixture = TestBed.createComponent(AppComponent);
-    // component = fixture.componentInstance;
     app = fixture.debugElement.componentInstance;
     h1 = fixture.nativeElement.querySelector('h1');
   });
 
   it('should create the app', async(() => {
-    // let fixture = TestBed.createComponent(AppComponent);
-    // let app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
 
